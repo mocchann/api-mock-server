@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mock": "tsx e2e/mock.ts"
   },
   "dependencies": {
     "next": "15.4.4",
@@ -21,6 +22,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.4",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   }
 }
