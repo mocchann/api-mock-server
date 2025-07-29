@@ -5,12 +5,13 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
   if (path === "/graphql") {
     if (req.method === "GET") {
       res.statusCode = 200;
-      res.setHeader("Content-Type", "text/plain");
+      res.setHeader("Content-Type", "application/json");
       res.end("Hello, world!");
     }
   } else {
-    res.setHeader("Content-Type", "applicaiton/json");
-    res.end();
+    res.setHeader("Content-Type", "application/json");
+    res.statusCode = 404;
+    res.end("404 Not Found");
   }
 });
 

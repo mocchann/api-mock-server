@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mock": "tsx e2e/mock.ts"
+    "mock": "nodemon --watch e2e/mock.ts --exec tsx e2e/mock.ts"
   },
   "dependencies": {
     "next": "15.4.4",
@@ -22,6 +22,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.4",
+    "nodemon": "^3.1.10",
     "tsx": "^4.20.3",
     "typescript": "^5"
   }
