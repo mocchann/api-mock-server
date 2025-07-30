@@ -8,6 +8,9 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
       res.setHeader("Content-Type", "application/json");
       res.end("Hello, world!");
     }
+    if (req.method === "POST") {
+      // graphqlクエリのモックをreturnする
+    }
   } else {
     res.setHeader("Content-Type", "application/json");
     res.statusCode = 404;
