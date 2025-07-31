@@ -7,12 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mock": "nodemon --watch e2e/mock.ts --exec tsx e2e/mock.ts"
+    "mock": "nodemon --watch e2e/mock.ts --exec tsx e2e/mock.ts",
+    "codegen": "graphql-codegen"
   },
   "dependencies": {
     "next": "15.4.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "@apollo/client": "^3.8.0",
+    "graphql": "^16.8.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -24,6 +27,10 @@
     "eslint-config-next": "15.4.4",
     "nodemon": "^3.1.10",
     "tsx": "^4.20.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typescript": "^4.0.0",
+    "@graphql-codegen/typescript-operations": "^4.0.0",
+    "@graphql-codegen/typescript-react-apollo": "^4.2.0"
   }
 }
