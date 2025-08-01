@@ -1,8 +1,39 @@
 import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { useQuery } from "@apollo/client";
-import { GET_USERS, GET_POSTS } from "@/graphql/queries";
+import { useQuery, gql } from "@apollo/client";
+
+const GetUsers = gql`
+  query GetUsers {
+    users {
+      id
+      name
+      email
+      posts {
+        id
+        title
+        content
+        createdAt
+      }
+    }
+  }
+`;
+
+const GetPosts = gql`
+  query GetPosts {
+    posts {
+      id
+      title
+      content
+      createdAt
+      author {
+        id
+        name
+        email
+      }
+    }
+  }
+`;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,12 +50,12 @@ export default function Home() {
     data: usersData,
     loading: usersLoading,
     error: usersError,
-  } = useQuery(GET_USERS);
+  } = useQuery(GetUsers);
   const {
     data: postsData,
     loading: postsLoading,
     error: postsError,
-  } = useQuery(GET_POSTS);
+  } = useQuery(GetPosts);
 
   if (usersLoading || postsLoading) {
     return (
