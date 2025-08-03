@@ -92,6 +92,7 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
         <html>
         <head>
           <title>GraphQL Playground</title>
+          <meta charset="utf-8">
         </head>
         <body>
           <h1>GraphQL Mock Server</h1>
