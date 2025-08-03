@@ -1,6 +1,5 @@
 import { createServer, IncomingMessage, ServerResponse } from "http";
 
-// モックデータ
 const mockUsers = [
   {
     id: "1",
@@ -31,7 +30,6 @@ const mockPosts = [
   },
 ];
 
-// GraphQLクエリをパースする関数
 function parseGraphQLQuery(body: string) {
   try {
     const parsed = JSON.parse(body);
@@ -41,7 +39,6 @@ function parseGraphQLQuery(body: string) {
   }
 }
 
-// GraphQLレスポンスを生成する関数
 function generateGraphQLResponse(query: string) {
   if (query.includes("users")) {
     return {
@@ -84,7 +81,6 @@ const server = createServer((req: IncomingMessage, res: ServerResponse) => {
 
   if (path === "/graphql") {
     if (req.method === "GET") {
-      // GraphQL Playground用のHTMLを返す
       res.statusCode = 200;
       res.setHeader("Content-Type", "text/html");
       res.end(`
